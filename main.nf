@@ -61,7 +61,7 @@ process javasync {
   file "p1_p2.sync" into syncout
   
   """
-  perl /popoolation2_1201/mpileup2sync.pl --input $pileup --output p1_p2.sync --fastq-type sanger
+  java -ea -Xmx28g -jar /popoolation2_1201/mpileup2sync.jar --input $pileup --output p1_p2_java.sync --fastq-type sanger --threads 1 
   """
 
 }
