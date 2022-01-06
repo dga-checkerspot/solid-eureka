@@ -1,7 +1,7 @@
 #!/usr/bin/env nextflow
 
-params.Seqs='CHK*_R{1,2}_001.fastq.gz'
-params.reffile='/Users/danielgates/Desktop/PoolSeq/ref/CHK22_ref1.fasta'
+params.Seqs='s3://pipe.scratch.3/resources/CHK*_R{1,2}_001.fastq.gz'
+params.reffile='s3://pipe.scratch.3/resources/CHK22_ref1.fasta'
 
 
 
