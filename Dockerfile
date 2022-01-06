@@ -24,4 +24,12 @@ RUN chmod 777 popoolation2_1201/mpileup2sync.pl
 
 RUN chmod 777 popoolation2_1201/fst-sliding.pl
 
+RUN conda install -c anaconda perl
+
+RUN conda install -c bioconda perl-pod-usage
+
+RUN PATH=$PATH:/root/miniconda3/lib/5.26.2/
+
 RUN conda install -c bioconda samtools
+
+RUN conda install -c bioconda minimap2
