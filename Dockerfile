@@ -33,3 +33,5 @@ RUN PATH=$PATH:/root/miniconda3/lib/5.26.2/
 RUN conda install -c bioconda samtools
 
 RUN conda install -c bioconda minimap2
+
+RUN conda install -c bioconda java-jdk
