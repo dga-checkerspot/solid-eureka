@@ -58,10 +58,10 @@ process javasync {
   path pileup from pileupfile
   
   output:
-  file "p1_p2_java.sync" into syncout
+  file "p1_p2.sync" into syncout
   
   """
-  java -jar /popoolation2_1201/mpileup2sync.jar --input $pileup --output p1_p2_java.sync
+  perl /popoolation2_1201/mpileup2sync.pl --input $pileup --output p1_p2.sync --fastq-type sanger 
   """
 
 }
