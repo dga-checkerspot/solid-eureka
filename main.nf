@@ -52,7 +52,7 @@ process pileup {
 
 process javasync {
 
-  memory '32G'
+  memory '8G'
   
   input:
   path pileup from pileupfile
