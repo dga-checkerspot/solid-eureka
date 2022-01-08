@@ -23,6 +23,7 @@ process map {
   file "${pair_id}.sort.bam" into mapdir
   
   """
+  bwa index $ref
   bwa aln $ref "${pair_id}_R1_001.fastq.gz" "${pair_id}_R2_001.fastq" > "${pair_id}.sai"
   bwa samse $ref "${pair_id}.sai" "${pair_id}_R1_001.fastq.gz" "${pair_id}_R2_001.fastq" > "${pair_id}.sam"
   samtools view -bS "${pair_id}.sam" > "${pair_id}.bam"
