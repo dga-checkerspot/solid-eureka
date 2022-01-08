@@ -10,7 +10,6 @@ Channel
 	.ifEmpty {error "Cannot find any reads matching: ${params.Seqs}"}
 	.set { read_pairs_ch }
 	
-//just testing with the R1 reads now
 process map {
 
 
@@ -21,10 +20,13 @@ process map {
   path ref from params.reffile
   
   output:
-  file "${pair_id}.bam" into mapdir
+  file "${pair_id}.sort.bam" into mapdir
   
   """
-  minimap2 -ax sr $ref "${pair_id}_R1_001.fastq.gz" | samtools sort -o "${pair_id}.bam"
+  bwa aln $ref "${pair_id}_R1_001.fastq.gz" "${pair_id}_R2_001.fastq" > "${pair_id}.sai"
+  bwa samse $ref "${pair_id}.sai" "${pair_id}_R1_001.fastq.gz" "${pair_id}_R2_001.fastq" > "${pair_id}.sam"
+  samtools view -bS "${pair_id}.sam" > "${pair_id}.bam"
+  samtools sort "${pair_id}.bam" -o "${pair_id}.sort.bam"
   """  
 
 }
