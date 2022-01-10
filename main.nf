@@ -45,6 +45,8 @@ process pileup {
   output:
   file "p1_p2.mpileup" into pileupfile
   file "dir.txt" into bamcheck
+  file "1.bam" into bam1
+  file "2.bam" into bam2
   
   """
   ls *.bam > dir.txt
