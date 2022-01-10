@@ -68,7 +68,7 @@ process javasync {
   file "p1_p2.sync" into syncout
   
   """
-  perl /popoolation2_1201/mpileup2sync.pl --input $pileup --output p1_p2.sync --fastq-type sanger 
+  perl /usr/src/popoolation2_1201/mpileup2sync.pl --input $pileup --output p1_p2.sync --fastq-type sanger 
   """
 
 }
@@ -86,7 +86,7 @@ process fst {
   
   
   """
-  perl /popoolation2_1201/fst-sliding.pl --input $syncfile --output p1_p2_w500.fst --min-count 6 --min-coverage 6 --max-coverage 1000 --min-covered-fraction 0.75 --window-size 500 --step-size 500 --pool-size 500
+  perl /usr/src/popoolation2_1201/fst-sliding.pl --input $syncfile --output p1_p2_w500.fst --min-count 6 --min-coverage 6 --max-coverage 1000 --min-covered-fraction 0.75 --window-size 500 --step-size 500 --pool-size 500
   """
 
 }
