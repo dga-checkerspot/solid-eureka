@@ -44,9 +44,10 @@ process pileup {
   
   output:
   file "p1_p2.mpileup" into pileupfile
-  file "*.bam" into bamcheck
+  file "dir.txt" into bamcheck
   
   """
+  ls *.bam > dir.txt
   samtools mpileup -B *.bam > p1_p2.mpileup
   """
 
